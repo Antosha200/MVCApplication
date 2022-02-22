@@ -15,17 +15,4 @@
             $this->Wight = $_POST['Wight'];
             $this->Lenght = $_POST['Length'];
         }
-
-        public function addProduct()
-        {
-            if (isset($SKU) && isset($name) && isset($Price) && isset($Category) && isset($Height) && isset($Wight) && isset($Length)){
-                $sqlQuery = $this->connect();
-                $sqlQuery ->query("INSERT INTO `products` (`SKU`, `Name`, `Price`, `Size`, `Weight`, `Height`, `Width`, `Length`, `Category`) VALUES ('$SKU', '$name', '$Price', NULL , NULL , '$Height', '$Wight', '$Length', '$Category');");
-            }
-        }
-
-        public function updateProduct()
-        {
-            // TODO: Implement updateProduct() method.
-        }
     }

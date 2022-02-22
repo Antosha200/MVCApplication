@@ -15,18 +15,21 @@
             }else return $mysqli;
         }
 
-        abstract public function addProduct (); // creating object for every category of product
-        public function getProducts(){
+        public function addProduct (){
+
+        }// creating object for every category of product // в самих дочерних не использовать этот метод
+        public function getProducts(){ //на выходе тоже объект
             $sqlQuery = $this->connect();
             $sql="SELECT * FROM `products` ";
             if ($result = $sqlQuery->query($sql)){
                 return $result;
             }else (new DefaultController)->act();
         } // returned set of String -> iterate with a loop in controller
-        public function deleteProducts(){ // что будет в SQL запросе?
+        public function deleteProducts(){ // WHERE Sku IN - регистр чекнуть. //принимает массив
             $sqlQuery = $this->connect();
         }
 
-        abstract public function updateProduct(); // update для всех или для каждого?
+        public function updateProduct(){ //приходит критерий
+        }
 
     }

@@ -12,16 +12,11 @@
             $this->Weight = $_POST['Weight'];
         }
 
-        public function addProduct()
+        public function addProduct() //проверки и валидация в контроллере -> все; передается объект
         {
-            if (isset($SKU) && isset($name) && isset($Price) && isset($Category) && isset($Weight)){
+            if (isset($_POST['Sku']) && isset($name) && isset($Price) && isset($Category) && isset($Weight)){ //isset - подправить уже в контролеере.
                 $sqlQuery = $this->connect();
                 $sqlQuery ->query("INSERT INTO `products` (`SKU`, `Name`, `Price`, `Size`, `Weight`, `Height`, `Width`, `Length`, `Category`) VALUES ('$SKU', '$name', '$Price', NULL , '$Weight', NULL, NULL, NULL, '$Category');");
             }
-        }
-
-        public function updateProduct()
-        {
-            // TODO: Implement updateProduct() method.
         }
     }
