@@ -9,11 +9,13 @@
         public $url;
         public $httpMethodType;
         public $name;
+        public $function;
 
         private function __construct(){
             $this -> url = $_SERVER['REQUEST_URI'];
             $this -> httpMethodType = $_SERVER["REQUEST_METHOD"];
             $this -> name = $_POST['name'];
+            $this -> function = $_POST['function'];
         }
 
         public static function getInstance(){
@@ -31,12 +33,12 @@
                 /404                GET,POST            ->> 404 page
              */
 
-            if ($this->url === '/' && $this->httpMethodType ==='GET'){ //product list page
+            if ($this->url === '/' && $this->httpMethodType ==='GET'){ //show
                 $ProductListController = new ProductListController();
                 $ProductListController->act();
                 exit;
             }
-            if ($this->url === '/addProduct' && $this->httpMethodType ==='GET'){ //add product form page
+            if ($this->url === '/addProduct' && $this->httpMethodType ==='GET'){ //form page
                 $ProductFormController = new ProductFormController();
                 $ProductFormController->act();
                 exit;
@@ -46,7 +48,7 @@
                 $ProductAddController->act();
                 exit;
             }
-            if ($this->url === '/' && $this->httpMethodType ==='POST' && $_POST['function'] === 'DELETE'){ //delete products from database, show product list
+            if ($this->url === '/' && $this->httpMethodType ==='POST' && $this->function === 'DELETE'){ //delete products from database, show product list
                 $ProductDeleteController = new ProductDeleteController();
                 $ProductDeleteController->act();
                 exit;
