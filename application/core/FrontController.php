@@ -10,14 +10,12 @@
         public $url;
         public $httpMethodType;
         public $name;
-        public $function;
 
         private function __construct()
         {
             $this->url = $_SERVER['REQUEST_URI'];
             $this->httpMethodType = $_SERVER["REQUEST_METHOD"];
             $this->name = $_POST['name'];
-            $this->function = $_POST['function'];
         }
 
         public static function getInstance()
@@ -45,11 +43,11 @@
                     $ProductFormController = new ProductFormController();
                     $ProductFormController->act();
                 } else {
-                    if ($this->url === '/' && $this->httpMethodType === 'POST' && isset($_POST['Sku']) && isset($_POST['Price']) && isset($_POST['Name'])) { //add product to database, show product list// isset *//проверить регистр
+                    if ($this->url === '/' && $this->httpMethodType === 'POST' && isset($_POST['sku']) && isset($_POST['price']) && isset($_POST['name'])) { //add product to database, show product list//
                         $ProductAddController = new ProductAddController();
                         $ProductAddController->act();
                     } else {
-                        if ($this->url === '/' && $this->httpMethodType === 'POST' && isset($_POST['Sku'])) { //delete products from database, show product list// регистр проверить
+                        if ($this->url === '/' && $this->httpMethodType === 'POST' && isset($_POST['sku'])) { //delete products from database, show product list// регистр проверить
                             $ProductDeleteController = new ProductDeleteController();
                             $ProductDeleteController->act();
                         } else {
