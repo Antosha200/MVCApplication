@@ -2,7 +2,10 @@
  class ProductListController{
      public function act(){
         echo "ProductListController";
-        $List = Product::getProducts();
-        // через цикл достаём и показываем
+
+        $model = Model::getInstance();
+        $products = $model->getProducts();
+
+        //достаём и показываем в template //
      }
  }
