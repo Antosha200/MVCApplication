@@ -5,7 +5,6 @@
 
         $model = Model::getInstance();
         $products = $model->getProducts();
-
-        //достаём и показываем в template //
+        echo PHPTemplate::view("application/core/Templates/ProductsList.php", ['products'=>$products, 'title' => 'Product List']);
      }
  }

@@ -10,7 +10,7 @@ require "application/core/Models/DVD.php";
          $model->addProduct($product);
 
          $products = $model->getProducts();
-         echo PHPTemplate::view("application/core/Templates/ProductList.php", ['products'=>$products]);
+         echo PHPTemplate::view("application/core/Templates/ProductList.php", ['event' => 'New Products added', 'products'=>$products, 'title' => 'Product List']); // output -> updated products
      }
  }
 

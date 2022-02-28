@@ -42,7 +42,7 @@
             $query = "INSERT INTO `products`(`SKU`, `Name`, `Price`, `Size`, `Weight`, `Height`, `Width`, `Length`, `Category`)
             VALUES(
                    '{$product -> getSKU() }',
-                   '{$product -> getName ()}',
+                   '{$product -> getName()}',
                    $product-> getPrice(),
                    '{$params['size']}',
                    '{$params['weight']}',

@@ -2,10 +2,9 @@
 <html>
     <head>
         <title> <?php if (isset($title)) echo $title?></title>
-        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-    <h1 class='h1Name'>Product Add</h1>
+    <h1 class='PageName'>Product Add</h1>
 
      // use form !=butt //разбить div-ами
 
