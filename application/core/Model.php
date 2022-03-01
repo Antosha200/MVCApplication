@@ -26,15 +26,15 @@
             $optionalParams = ['size', 'weight', 'length', 'width', 'height'];
             $params = [];
 
-            foreach ($optionalParams as $property => $value){
-                $methodName = 'get'.ucfirst($property);
+            foreach ($optionalParams as $property => $value) {
+                $methodName = 'get' . ucfirst($property);
                 if (method_exists($product, $methodName)) {
                     $params[$property] = $product->$methodName();
                 }
             }
 
-            foreach ($optionalParams as $value){
-                if (!isset($params[$value])){
+            foreach ($optionalParams as $value) {
+                if (!isset($params[$value])) {
                     $params[$value] = 'NULL';
                 }
             }
@@ -53,8 +53,6 @@
             ) ";
 
             $sqlQuery->query($query);
-
-
         }
 
         public static function getProducts()
@@ -62,7 +60,7 @@
             $sqlQuery = self::connect();
             $sql = "SELECT * FROM `products` ";
             if ($queryResult = $sqlQuery->query($sql)) {
-                return $queryResult->fetch_all(); // в идеале отсюда вернуть массив
+                return mysqli_fetch_all($queryResult, MYSQLI_ASSOC); // в идеале отсюда вернуть массив
             }
         }
 
@@ -82,4 +80,18 @@
             if (!isset($instance)) $instance = new self;
             return $instance;
         }
+
+        public function getName()
+        {
+            return $this->name;
+        }
+        public function getSKU()
+        {
+            return $this->SKU;
+        }
+        public function getPrice()
+        {
+            return $this->price;
+        }
+
     }
