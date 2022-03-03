@@ -1,4 +1,5 @@
 <?php
+
     class Furniture extends Model{
 
         public $height;
@@ -7,9 +8,9 @@
 
         public function __construct(){
             parent::__construct();
-            $this->height = $_POST['height'];
-            $this->wight = $_POST['wight'];
-            $this->length = $_POST['length'];
+            $this->height = $_POST['Height'];
+            $this->wight = $_POST['Wight'];
+            $this->length = $_POST['Length'];
         }
 
         public function getHeight()

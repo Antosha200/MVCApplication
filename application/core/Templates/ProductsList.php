@@ -22,7 +22,7 @@
                     foreach ($products as $product):?>
                         <li class="product-wrapper">
                             <div class="product">
-                                <input type="checkbox" name="sku[]" value='<?php echo $product['SKU'];?>'>
+                                <input type="checkbox" name="SKU[]" value='<?php echo $product['SKU'];?>'>
                                 <p><?php echo $product['SKU'];?></p>
                                 <p><?php echo $product['Name'];?></p>
                                 <p><?php echo number_format($product['Price'], 2);?>$</p>

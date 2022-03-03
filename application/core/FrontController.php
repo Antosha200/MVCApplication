@@ -1,9 +1,4 @@
 <?php
-    //require "Controllers/DefaultController.php";
-    require "Controllers/ProductListController.php";
-    require "Controllers/ProductAddController.php";
-    require "Controllers/ProductFormController.php";
-    require "Controllers/ProductDeleteController.php";
 
     class FrontController
     {
@@ -15,7 +10,7 @@
         {
             $this->url = $_SERVER['REQUEST_URI'];
             $this->httpMethodType = $_SERVER["REQUEST_METHOD"];
-            $this->name = $_POST['name'];
+            $this->name = $_POST['Name'];
         }
 
         public static function getInstance()
@@ -34,6 +29,7 @@
                 /                   POST []sku          ->> delete products from database, show product list
                 /404                GET,POST            ->> 404 page
              */
+            echo $this->url;
 
             if ($this->url === '/' && $this->httpMethodType === 'GET') {
                 //show
@@ -43,11 +39,11 @@
                 //form page
                 $ProductFormController = new ProductFormController();
                 $ProductFormController->act();
-            } elseif ($this->url === '/' && $this->httpMethodType === 'POST' && isset($_POST['sku'], $_POST['price'], $_POST['name'])) {
+            } elseif ($this->url === '/' && $this->httpMethodType === 'POST' && isset($_POST['SKU'], $_POST['Price'], $_POST['Name'])) {
                 //add product to database, show product list
                 $ProductAddController = new ProductAddController();
                 $ProductAddController->act();
-            } elseif ($this->url === '/' && $this->httpMethodType === 'POST' && isset($_POST['sku'])) {
+            } elseif ($this->url === '/' && $this->httpMethodType === 'POST' && isset($_POST['SKU'])) {
                 //delete products from database, show product list
                 $ProductDeleteController = new ProductDeleteController();
                 $ProductDeleteController->act();

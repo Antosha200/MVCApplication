@@ -1,5 +1,4 @@
 <?php
-    require "Controllers/DefaultController.php";
 
     class Model
     {
@@ -8,9 +7,9 @@
         public $price;
 
         public function __construct(){
-            $this->name = $_POST['name'];
-            $this->SKU = $_POST['sku'];
-            $this->price = $_POST['price'];
+            $this->name = $_POST['Name'];
+            $this->SKU = $_POST['SKU'];
+            $this->price = $_POST['Price'];
         }
 
         private static function connect()
@@ -23,7 +22,7 @@
             $sqlQuery = self::connect();
 
             $category = get_class($product);
-            $optionalParams = ['size', 'weight', 'length', 'width', 'height'];
+            $optionalParams = ['Size', 'Weight', 'Length', 'Width', 'Height'];
             $params = [];
 
             foreach ($optionalParams as $property => $value) {
@@ -39,16 +38,18 @@
                 }
             }
 
+            $price = $product->getPrice();////
+
             $query = "INSERT INTO `products`(`SKU`, `Name`, `Price`, `Size`, `Weight`, `Height`, `Width`, `Length`, `Category`)
             VALUES(
                    '{$product -> getSKU() }',
                    '{$product -> getName()}',
-                   $product-> getPrice(),
-                   '{$params['size']}',
-                   '{$params['weight']}',
-                   '{$params['length']}',
-                   '{$params['width']}',
-                   '{$params['height']}',
+                   '$price',////
+                   '{$params['Size']}',
+                   '{$params['Weight']}',
+                   '{$params['Length']}',
+                   '{$params['Width']}',
+                   '{$params['Height']}',
                    '{$category}'
             ) ";
 
@@ -65,12 +66,13 @@
         }
 
         public function deleteProducts($SKUArray)
-        { // WHERE Sku IN - регистр чекнуть. //принимает массив //удаляем через foreach
+        {
             // $SKUArray = $_POST['sku']
             $sqlQuery = $this->connect();
             if (count($SKUArray)){
                 $toString = "'".implode("','", $SKUArray)."'";
-                $sqlQuery->query("DELETE FROM 'product' WHERE 'sku' IN ({$toString})");
+                echo $toString;
+                $sqlQuery->query("DELETE FROM 'products' WHERE 'SKU' IN ({$toString})");
             }
         }
 

@@ -1,0 +1,16 @@
+{
+    "name": "mvc/mvc",
+    "description": "mvc",
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "": [
+                "application/core/Controllers/",
+                "application/core/Helpers",
+                "application/core/Models",
+                "application/core"
+            ]
+        }
+    }
+}

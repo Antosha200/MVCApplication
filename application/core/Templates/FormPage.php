@@ -23,8 +23,14 @@
                 <label>Price ($) </label>
                 <input type="text" id='Price' name="Price" placeholder="Write price ($)">
                 <br><br>
+
+
                 <label>Category </label>
                 <input type="text" id='Category' name="Category" placeholder="Write category">
+                <br><br>
+
+                <label>Weight</label>
+                <input type="text" id='Weight' name="Weight" placeholder="Write weight">
                 <br><br>
 <!--                <label>Type Switcher </label>-->
 <!--                <select name='list' id='Category'>-->
