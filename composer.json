@@ -2,7 +2,9 @@
     "name": "mvc/mvc",
     "description": "mvc",
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+      "ext-mysqli": "*"
+    },
     "autoload": {
         "psr-4": {
             "": [

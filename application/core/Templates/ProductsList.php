@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title><?php if (isset($title)) echo $title ?></title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
     <body>
     <h1 class="PageName"> Product List </h1>
@@ -17,7 +18,7 @@
             <div class="hrLine2">
                 <hr class="hrLine" style="border: 2px solid;">
             </div>
-            <ul class="products">
+            <ul class="productList">
                 <?php if (isset($products)) {
                     foreach ($products as $product):?>
                         <li class="product-wrapper">

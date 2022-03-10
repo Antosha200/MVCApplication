@@ -1,0 +1,85 @@
+body{
+    margin: 0px 20px 0px 60px;
+}
+
+form{
+    margin-bottom: 0;
+}
+
+li {
+    margin-right: 25px;
+}
+
+.up{
+    font: 16px 'Times New Roman';
+    margin-bottom: 1px;
+    text-align: right;
+}
+
+.btn{
+    background: #EFEFEF; /* Серый цвет фона */
+    /*color: #fff;*/ /* Белый цвет текста */
+    padding: 2.5px 6px 2.5px 6px; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 3px; /* Скругляем уголки */
+    border: 1px solid;
+    text-align: right;
+}
+
+.product p {
+    margin-top: 0px;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+.product-wrapper {
+    display: block;
+    float: left; /*Задаем обтекание*/
+    font-size: 18px;
+    width: 300px; /*Фиксируем ширину блока*/
+    margin: 0px 12px 10px 12px;
+    border: 1px solid;
+    padding-bottom: 30px;
+}
+
+.product-wrapper input {
+    text-align: left;
+    float: left;
+}
+
+.rightButtons{
+    float: right;
+    padding-top: 15px;
+    padding-right: 15px;
+}
+
+.products{
+    margin: 0 auto;/*центрируем ее*/
+    list-style: none;
+    padding: 5px 0px 0px 120px;
+    height: 115px;
+    text-align: center; /*Центрируем текст по горизонтали*/
+}
+
+.product {
+    display: block;
+    border: 3px solid;
+    text-decoration: none;
+    z-index: 0;
+    height: 155px;
+}
+
+.buttons{
+    width:  100%;
+    border-spacing: 0;
+}
+
+.buttons td {
+    width: 50%;
+    vertical-align: central;
+    padding-bottom: 0px;
+}
+
+.ErrorPage{
+    text-align: center;
+}

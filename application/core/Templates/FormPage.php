@@ -2,6 +2,7 @@
 <html>
     <head>
         <title> <?php if (isset($title)) echo $title?></title>
+        <link href="css/main.css" rel="stylesheet" type="text/css">
     </head>
     <body>
     <h1 class='PageName'>Product Add</h1>

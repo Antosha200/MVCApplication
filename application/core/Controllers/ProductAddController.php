@@ -6,7 +6,7 @@
 
              $productType = $_POST['Category'];
 
-             echo "<br>".$productType."<br>";//название категории, которая пришла в $_POST
+             echo "<br>".$productType."<br>";//название категории, которая пришла в $_POST//
              print_r($_POST); //
 
              $product = new $productType($_POST);

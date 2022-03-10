@@ -38,7 +38,7 @@
                 }
             }
 
-            $price = $product->getPrice();////
+            $price = $product->getPrice();
 
             $query = "INSERT INTO `products`(`SKU`, `Name`, `Price`, `Size`, `Weight`, `Height`, `Width`, `Length`, `Category`)
             VALUES(
@@ -72,7 +72,7 @@
             if (count($SKUArray)){
                 $toString = "'".implode("','", $SKUArray)."'";
                 echo $toString;
-                $sqlQuery->query("DELETE FROM 'products' WHERE 'SKU' IN ({$toString})");
+                $sqlQuery->query("DELETE FROM `products` WHERE 'SKU' IN ({$toString})");
             }
         }
 
